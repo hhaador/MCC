@@ -1,8 +1,127 @@
 <!doctype html>
 <html lang="en-GB">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Blogs & Articles | Motion Controls Corporation</title>
-<meta name="description" content="Read electrical, industrial automation, power distribution, motor control and procurement insights from Motion Controls Corporation.">
-<meta name="robots" content="index,follow,max-image-preview:large"><meta name="theme-color" content="#07162f"><link rel="canonical" href="https://mcontrolsco.com/blogs.html"><meta property="og:type" content="website"><meta property="og:title" content="Blogs & Articles | Motion Controls Corporation"><meta property="og:description" content="Practical insights for electrical, automation and industrial procurement teams."><meta property="og:url" content="https://mcontrolsco.com/blogs.html"><meta property="og:image" content="https://mcontrolsco.com/og-image.svg"><link rel="stylesheet" href="styles.css"><script type="application/ld+json">{"@context":"https://schema.org","@type":"CollectionPage","name":"Blogs & Articles | Motion Controls Corporation","url":"https://mcontrolsco.com/blogs.html","isPartOf":{"@id":"https://mcontrolsco.com/#website"},"about":{"@type":"Organization","name":"Motion Controls Corporation"},"inLanguage":"en-GB"}</script>
-</head><body><div class="announcement"><span class="pulse"></span> Industrial insights for better decisions <a href="index.html#contact">Talk to MCC →</a></div><nav class="nav"><div class="container nav-inner"><a class="brand" href="index.html"><span class="brand-mark">MCC</span><span class="brand-name">MOTION CONTROLS<br>CORPORATION</span></a><button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button><div class="nav-links"><a href="index.html#about">About</a><a href="index.html#solutions">Solutions</a><a href="index.html#technology">Technology</a><a href="blogs.html">Blogs &amp; Articles</a><a class="nav-cta" href="index.html#contact">Talk to MCC ↗</a></div></div></nav><header class="blog-hero"><div class="container reveal"><div class="eyebrow"><i></i> MCC knowledge centre</div><h1>Blogs <em>&amp; Articles.</em></h1><p>Practical ideas, buying guidance and technical perspectives for businesses keeping industry in motion.</p></div></header><main><section><div class="container"><div class="article-toolbar"><div><div class="section-label">Insights library</div><h2 class="library-title">Ideas for better <span>industrial decisions.</span></h2></div><label class="search"><span>⌕</span><input id="articleSearch" type="search" placeholder="Search articles..." aria-label="Search articles"></label></div><div id="articleGrid" class="article-grid" aria-live="polite"></div><div id="emptyState" class="empty-state" hidden>No articles match your search.</div></div></section></main><footer><div class="container footer-grid"><a class="brand" href="index.html"><span class="brand-mark">MCC</span><span class="brand-name">MOTION CONTROLS<br>CORPORATION</span></a><p>Electrical expertise and digital capability for businesses that keep the world moving.</p><div class="footer-links"><a href="index.html">Home ↗</a><a href="https://equitycorp.tech/" target="_blank" rel="noopener">equitycorp.tech ↗</a><a href="mailto:Maksud.mr@gmail.com">Email MCC</a></div></div><div class="container footer-bottom">© 2026 Motion Controls Corporation. All rights reserved.</div></footer><script src="script.js"></script></body></html>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blogs & Articles | Motion Controls Corporation</title>
+  <meta name="description" content="Read electrical, industrial automation, power distribution, motor control and procurement insights from Motion Controls Corporation.">
+  <meta name="theme-color" content="#07162f">
+  <link rel="canonical" href="https://mcontrolsco.com/blogs.html">
+  <link rel="icon" href="create-one-polished-corporate-combination-logo-for-motion-c.png" type="image/png">
+  <style>
+    :root {
+      --navy: #07162f; --gold: #d2a94a; --gold-soft: #f1d58d; --ink: #1b2433; --muted: #516074; --line: #ebedf2; --soft: #f7f8fb;
+    }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Arial, Helvetica, sans-serif; color: var(--ink); background: #fff; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width:100%; display:block; }
+    .container { width: min(1100px, calc(100% - 32px)); margin: 0 auto; }
+    .topbar { background: var(--navy); color:#fff; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 10px 0; }
+    .topbar .container { display:flex; justify-content:center; align-items:center; gap: 12px; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--gold); display:inline-block; }
+    nav { background: rgba(7,22,47,.97); border-bottom:1px solid rgba(255,255,255,.08); }
+    .nav-inner { display:flex; align-items:center; justify-content:space-between; min-height:82px; gap: 22px; }
+    .brand { display:inline-flex; align-items:center; }
+    .brand img { height: 60px; width: auto; }
+    .nav-links { display:flex; gap: 22px; align-items:center; color: rgba(255,255,255,.82); font-size: 0.8rem; font-weight:700; letter-spacing: .12em; text-transform: uppercase; }
+    .cta { background: linear-gradient(135deg, var(--gold-soft), var(--gold)); color: var(--navy); border-radius: 999px; padding: 12px 18px; font-size: .76rem; font-weight:800; letter-spacing: .12em; text-transform:uppercase; }
+    .page-header { background: linear-gradient(135deg, #07162f, #102d59); color:#fff; padding: 66px 0 54px; }
+    .page-header h1 { margin:0; font-size: clamp(2.2rem, 4vw, 4rem); letter-spacing:-0.06em; }
+    .page-header p { margin: 14px 0 0; max-width: 760px; color: rgba(255,255,255,.76); }
+    main { padding: 52px 0 80px; }
+    .article-grid { display:grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 22px; }
+    .article-card { background:#fff; border:1px solid var(--line); border-radius:18px; box-shadow:0 12px 30px rgba(8,19,33,.06); padding:22px; }
+    .article-card .tag { display:inline-block; font-size:.7rem; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color: var(--gold); margin-bottom: 12px; }
+    .article-card h3 { margin:0 0 12px; font-size: 1.4rem; letter-spacing:-0.04em; }
+    .meta { color: var(--muted); font-size: 0.78rem; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 12px; }
+    .article-card p { margin:0; color: var(--muted); }
+    footer { background: #040d1d; color: rgba(255,255,255,.74); padding: 32px 0; }
+    .footer-inner { display:flex; align-items:center; justify-content:space-between; gap: 20px; flex-wrap: wrap; }
+    @media (max-width: 900px) { .nav-links { display:none; } .article-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .article-grid { grid-template-columns: 1fr; } .brand img { height: 50px; } }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container"><span class="dot"></span><span>Industrial insights for better decisions</span></div>
+  </div>
+  <nav>
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Motion Controls Corporation home">
+        <img src="create-one-polished-corporate-combination-logo-for-motion-c.png" alt="Motion Controls Corporation logo">
+      </a>
+      <div class="nav-links">
+        <a href="index.html#about">About</a>
+        <a href="index.html#solutions">Solutions</a>
+        <a href="index.html#technology">Technology</a>
+        <a href="index.html#industries">Industries</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+      <a class="cta" href="index.html#contact">Talk to MCC</a>
+    </div>
+  </nav>
+
+  <header class="page-header">
+    <div class="container">
+      <h1>Insights & Articles</h1>
+      <p>Practical guidance for electrical, industrial automation, power distribution, procurement and business technology decisions.</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="article-grid">
+        <article class="article-card">
+          <div class="tag">Motor control</div>
+          <h3>How to choose the right motor control solution for your facility</h3>
+          <div class="meta">January 12, 2026</div>
+          <p>A practical guide to VFDs, starters, contactors and overload protection for better operational performance.</p>
+        </article>
+        <article class="article-card">
+          <div class="tag">Power distribution</div>
+          <h3>Power distribution fundamentals for commercial buildings</h3>
+          <div class="meta">January 28, 2026</div>
+          <p>The key components and planning considerations behind safe, resilient and efficient building electrical systems.</p>
+        </article>
+        <article class="article-card">
+          <div class="tag">Industrial automation</div>
+          <h3>PLC, HMI and SCADA: understanding the automation stack</h3>
+          <div class="meta">February 9, 2026</div>
+          <p>Learn how core automation technologies work together to improve visibility, control and operational reliability.</p>
+        </article>
+        <article class="article-card">
+          <div class="tag">Procurement</div>
+          <h3>What to include in an industrial component enquiry</h3>
+          <div class="meta">February 19, 2026</div>
+          <p>A concise checklist for helping suppliers return accurate quotations faster and with less rework.</p>
+        </article>
+        <article class="article-card">
+          <div class="tag">Motor control</div>
+          <h3>VFD selection: five specifications that matter</h3>
+          <div class="meta">March 3, 2026</div>
+          <p>Frequency range, load profile, environment and other details that shape a reliable drive choice.</p>
+        </article>
+        <article class="article-card">
+          <div class="tag">Project support</div>
+          <h3>Reducing procurement risk in electrical projects</h3>
+          <div class="meta">March 17, 2026</div>
+          <p>How structured sourcing, documentation and supplier coordination can protect project delivery.</p>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <a href="index.html" aria-label="Motion Controls Corporation home">
+          <img src="create-one-polished-corporate-combination-logo-for-motion-c.png" alt="Motion Controls Corporation logo" style="height:42px; width:auto;">
+        </a>
+      </div>
+      <div>01791665627 · Maksud.mr@gmail.com</div>
+      <div>© Motion Controls Corporation</div>
+    </div>
+  </footer>
+</body>
+</html>
