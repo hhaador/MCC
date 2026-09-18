@@ -1,76 +1,81 @@
 <!doctype html>
 <html lang="en-GB">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Motion Controls Corporation | Electrical & Industrial Solutions</title>
-  <meta name="description" content="Motion Controls Corporation supplies electrical components, industrial automation, power distribution, motor control and B2B procurement solutions for UK businesses.">
-  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Motion Controls Corporation provides electrical, industrial automation, power distribution, motor control and business technology solutions for UK businesses.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#07162f">
   <link rel="canonical" href="https://mcontrolsco.com/">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Motion Controls Corporation">
   <meta property="og:title" content="Motion Controls Corporation | Powering Industry">
-  <meta property="og:description" content="Electrical, automation, power distribution, motor control and industrial procurement solutions.">
+  <meta property="og:description" content="Reliable electrical products, industrial automation and business technology solutions for modern facilities and factories.">
   <meta property="og:url" content="https://mcontrolsco.com/">
   <meta property="og:image" content="https://mcontrolsco.com/create-one-polished-corporate-combination-logo-for-motion-c.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Motion Controls Corporation | Powering Industry">
+  <meta name="twitter:description" content="Electrical, industrial automation, power distribution and motor control solutions for professional buyers.">
+  <title>Motion Controls Corporation | Powering Industry</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
-  <link rel="icon" href="create-one-polished-corporate-combination-logo-for-motion-c.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --navy: #07162f;
+      --navy-2: #0d1f3d;
       --blue: #12386b;
       --gold: #f0b52c;
-      --gold-soft: #f5d581;
+      --gold-soft: #f6d78b;
       --ink: #172033;
       --muted: #667085;
       --line: #e5e7eb;
       --soft: #f5f7fb;
       --shadow: 0 22px 70px rgba(7,22,47,.13);
     }
+
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
       font-family: 'DM Sans', Arial, sans-serif;
-      color: var(--ink);
-      line-height: 1.65;
       background: #fff;
+      color: var(--ink);
+      line-height: 1.6;
     }
-    a { text-decoration: none; color: inherit; }
+    a { color: inherit; text-decoration: none; }
     img { display: block; max-width: 100%; }
-    .container { width: min(1160px, calc(100% - 36px)); margin: 0 auto; }
+    button, input, textarea, select { font: inherit; }
+    .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
 
     .announcement {
       background: var(--navy);
       color: #fff;
       text-align: center;
-      padding: 10px 0;
-      font-size: 11px;
-      letter-spacing: .12em;
+      font-size: 12px;
+      letter-spacing: .11em;
       text-transform: uppercase;
+      padding: 11px 0;
       line-height: 1.4;
     }
     .announcement a {
       color: var(--gold-soft);
       font-weight: 700;
     }
+    .announcement span { vertical-align: middle; }
     .pulse {
       display: inline-block;
       width: 8px;
       height: 8px;
-      margin-right: 9px;
       border-radius: 50%;
       background: var(--gold);
-      box-shadow: 0 0 0 0 rgba(240,181,44,.65);
+      margin-right: 10px;
+      box-shadow: 0 0 0 0 rgba(240,181,44,.7);
       animation: pulse 2.2s infinite;
-      vertical-align: middle;
     }
     @keyframes pulse {
       0% { box-shadow: 0 0 0 0 rgba(240,181,44,.7); }
-      70% { box-shadow: 0 0 0 12px rgba(240,181,44,0); }
+      70% { box-shadow: 0 0 0 9px rgba(240,181,44,0); }
       100% { box-shadow: 0 0 0 0 rgba(240,181,44,0); }
     }
 
@@ -78,285 +83,559 @@
       position: sticky;
       top: 0;
       z-index: 30;
-      background: rgba(7,22,47,.97);
+      background: rgba(7,22,47,.98);
       border-bottom: 1px solid rgba(255,255,255,.08);
       backdrop-filter: blur(12px);
     }
     .nav-inner {
-      min-height: 78px;
+      min-height: 84px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 22px;
+      gap: 26px;
     }
     .brand {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-width: 290px;
-    }
-    .brand img {
-      width: auto;
-      height: 68px;
-      max-width: 100%;
-      filter: drop-shadow(0 2px 0 rgba(0,0,0,.12));
-    }
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      font-size: 12px;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.9);
+      min-width: 300px;
+      color: #fff;
+      font-family: 'Space Grotesk', 'DM Sans', sans-serif;
       font-weight: 700;
     }
-    .nav-links a {
-      transition: color .2s ease;
-    }
-    .nav-links a:hover { color: var(--gold-soft); }
-    .nav-cta {
-      position: relative;
+    .brand-mark {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
+      width: 54px;
+      height: 54px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, rgba(246,215,139,.18), rgba(240,181,44,.06));
+      border: 1px solid rgba(246,215,139,.38);
+      color: var(--gold-soft);
+      font-size: 20px;
+      letter-spacing: .04em;
+      margin-right: 8px;
+    }
+    .brand-divider {
+      color: rgba(255,255,255,.5);
+      display: inline-block;
+      margin: 0 8px;
+      font-size: 28px;
+      line-height: 1;
+    }
+    .brand-name {
+      font-size: 12px;
+      line-height: 1.2;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #f3f7ff;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: rgba(255,255,255,.82);
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .nav-links a:hover { color: var(--gold-soft); }
+    .nav-contact {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
       padding: 12px 18px;
       border-radius: 999px;
       background: linear-gradient(135deg, var(--gold-soft), var(--gold));
       color: var(--navy);
-      font-size: 12px;
-      letter-spacing: .12em;
-      font-weight: 800;
-      text-transform: uppercase;
-      border: 1px solid rgba(0,0,0,.08);
       box-shadow: 0 10px 25px rgba(240,181,44,.2);
-      transition: transform .2s ease, box-shadow .2s ease;
+      position: relative;
+      overflow: hidden;
     }
-    .nav-cta::after,
-    .hero-actions a::after,
-    .contact-actions a::after {
+    .nav-contact::after,
+    .button::after,
+    .primary-btn::after,
+    .secondary-btn::after {
       content: "";
       position: absolute;
       top: -80%;
       left: -45%;
       width: 24%;
       height: 260%;
-      transform: translateX(-300%) rotate(18deg);
       background: linear-gradient(105deg, transparent, rgba(255,255,255,.8), transparent);
-      animation: button-shine 4.8s ease-in-out infinite;
+      transform: translateX(-220%) rotate(18deg);
+      animation: shine 4.8s ease-in-out infinite;
     }
-    @keyframes button-shine {
-      0%, 55% { transform: translateX(-300%) rotate(18deg); }
+    @keyframes shine {
+      0%, 55% { transform: translateX(-220%) rotate(18deg); }
       78%, 100% { transform: translateX(560%) rotate(18deg); }
     }
-    .nav-cta:hover,
-    .hero-actions a:hover,
-    .contact-actions a:hover { transform: translateY(-2px); }
+
+    .menu-toggle {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border: 1px solid rgba(255,255,255,.16);
+      background: transparent;
+      border-radius: 12px;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      padding: 0;
+    }
+    .menu-toggle span {
+      display: block;
+      width: 18px;
+      height: 2px;
+      background: #fff;
+      border-radius: 99px;
+      position: relative;
+    }
+    .menu-toggle span + span { margin-top: 4px; }
 
     .hero {
-      background: radial-gradient(circle at 85% 20%, rgba(26,65,121,.85), rgba(13,37,75,.96) 30%, var(--navy) 75%);
+      background: radial-gradient(circle at 85% 22%, rgba(32,70,128,.82), rgba(15,38,75,.96) 30%, #07162f 74%);
       color: #fff;
-      padding: 80px 0 90px;
+      padding: 76px 0 34px;
+      overflow: hidden;
+      position: relative;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(130deg, rgba(255,255,255,.05), rgba(255,255,255,0));
+      pointer-events: none;
     }
     .hero-grid {
+      position: relative;
       display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 50px;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 46px;
       align-items: center;
     }
     .eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 8px 14px;
+      padding: 9px 14px;
       border-radius: 999px;
       background: rgba(255,255,255,.06);
       border: 1px solid rgba(255,255,255,.12);
-      font-size: 12px;
-      letter-spacing: .14em;
+      font-size: 11px;
+      letter-spacing: .15em;
       text-transform: uppercase;
       color: var(--gold-soft);
       font-weight: 700;
       margin-bottom: 22px;
     }
+    .eyebrow i {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 0 6px rgba(240,181,44,.15);
+    }
     .hero h1 {
-      margin: 0 0 16px;
-      font-size: clamp(3.2rem, 5vw, 5.6rem);
+      margin: 0 0 20px;
+      font-size: clamp(3rem, 5vw, 5.6rem);
       line-height: .96;
-      letter-spacing: -.08em;
-      font-weight: 800;
+      letter-spacing: -0.08em;
+      font-family: 'Space Grotesk', 'DM Sans', sans-serif;
+      font-weight: 700;
     }
     .hero h1 em {
       color: var(--gold-soft);
       font-style: normal;
     }
     .hero-text {
-      max-width: 650px;
-      margin: 0;
-      color: rgba(255,255,255,.82);
+      max-width: 620px;
+      margin: 0 0 26px;
+      color: rgba(255,255,255,.8);
       font-size: 1.08rem;
     }
     .hero-actions {
       display: flex;
-      gap: 14px;
+      gap: 16px;
+      align-items: center;
       flex-wrap: wrap;
-      margin-top: 24px;
+      margin-bottom: 26px;
     }
-    .hero-actions a,
-    .contact-actions a {
+    .button, .primary-btn, .secondary-btn {
       position: relative;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      overflow: hidden;
-      padding: 12px 18px;
-      border-radius: 999px;
+      gap: 8px;
+      text-transform: uppercase;
+      letter-spacing: .1em;
       font-size: 12px;
       font-weight: 800;
-      letter-spacing: .1em;
-      text-transform: uppercase;
+      padding: 14px 20px;
+      border-radius: 999px;
+      overflow: hidden;
       border: 1px solid transparent;
       transition: transform .2s ease, box-shadow .2s ease;
     }
-    .hero-actions .primary,
-    .contact-actions .primary {
+    .button-gold, .primary-btn {
       background: linear-gradient(135deg, var(--gold-soft), var(--gold));
       color: var(--navy);
-      box-shadow: 0 12px 24px rgba(240,181,44,.2);
+      box-shadow: 0 12px 28px rgba(240,181,44,.22);
+      border-color: rgba(0,0,0,.08);
     }
-    .hero-actions .secondary,
-    .contact-actions .secondary {
-      background: transparent;
-      border-color: rgba(255,255,255,.24);
+    .text-link, .secondary-btn {
       color: #fff;
+      border-color: rgba(255,255,255,.18);
+      background: rgba(255,255,255,.02);
     }
+    .button:hover, .primary-btn:hover, .secondary-btn:hover, .nav-contact:hover { transform: translateY(-2px); }
 
-    .hero-card {
-      background: rgba(255,255,255,.06);
+    .trust-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      color: rgba(255,255,255,.8);
+      font-size: 13px;
+    }
+    .avatars {
+      display: flex;
+      align-items: center;
+      counter-reset: item;
+    }
+    .avatars b {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      margin-left: -8px;
+      border-radius: 50%;
+      border: 2px solid rgba(7,22,47,.8);
+      background: linear-gradient(135deg, #1f4e91, #0d2750);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .06em;
+    }
+    .avatars b:first-child { margin-left: 0; }
+    .trust-row strong { color: #fff; }
+
+    .hero-visual {
+      position: relative;
+      min-height: 460px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .orbit {
+      position: absolute;
       border: 1px solid rgba(255,255,255,.12);
-      border-radius: 22px;
-      padding: 18px;
-      box-shadow: 0 25px 70px rgba(0,0,0,.25);
+      border-radius: 50%;
+      animation: spin 24s linear infinite;
+      opacity: .8;
     }
-    .hero-card-inner {
-      background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(241,244,250,.92));
-      border-radius: 18px;
-      padding: 24px;
+    .orbit-one {
+      width: 304px;
+      height: 304px;
+      transform: rotate(20deg);
+    }
+    .orbit-two {
+      width: 420px;
+      height: 420px;
+      border-style: dashed;
+      opacity: .5;
+      animation-direction: reverse;
+    }
+    @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+    .visual-card {
+      position: relative;
+      z-index: 2;
+      width: min(420px, 100%);
+      background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(240,244,250,.9));
+      border: 1px solid rgba(255,255,255,.4);
+      border-radius: 26px;
+      padding: 18px 18px 20px;
       color: var(--ink);
+      box-shadow: 0 28px 80px rgba(0,0,0,.32);
     }
-    .section-kicker {
-      color: var(--gold);
-      font-size: 12px;
-      font-weight: 900;
-      letter-spacing: 1.5px;
+    .visual-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+      letter-spacing: .12em;
       text-transform: uppercase;
-      margin-bottom: 14px;
+      color: var(--muted);
+      margin-bottom: 18px;
     }
-    .hero-card h3 {
-      margin: 0 0 10px;
-      font-size: 2rem;
+    .status {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--ink);
+      font-weight: 700;
+    }
+    .status i {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #1ec278;
+      display: inline-block;
+      box-shadow: 0 0 0 5px rgba(30,194,120,.15);
+    }
+    .power-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 94px;
+      height: 94px;
+      border-radius: 24px;
+      margin: 8px 0 14px;
+      background: linear-gradient(135deg, rgba(240,181,44,.2), rgba(17,56,107,.08));
+      border: 1px solid rgba(240,181,44,.35);
+      color: var(--navy);
+      font-size: 46px;
+      font-weight: 700;
+    }
+    .visual-title {
+      font-size: 2.2rem;
       line-height: 1.05;
       letter-spacing: -.05em;
+      margin-bottom: 16px;
+      font-family: 'Space Grotesk', 'DM Sans', sans-serif;
     }
-    .hero-card p {
-      margin: 0;
-      color: var(--muted);
+    .visual-title strong { color: var(--navy); }
+    .meter {
+      height: 12px;
+      border-radius: 999px;
+      background: #edf1f6;
+      overflow: hidden;
+      margin-bottom: 10px;
     }
-    .mini-stat {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+    .meter span {
+      display: block;
+      height: 100%;
+      width: 98.4%;
+      background: linear-gradient(90deg, var(--gold), #d9e4f5);
+      border-radius: inherit;
+    }
+    .meter-label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       gap: 12px;
-      margin-top: 18px;
-    }
-    .mini-stat div {
-      background: var(--soft);
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 12px 8px;
-      text-align: center;
-    }
-    .mini-stat strong {
-      display: block;
-      font-size: 1.2rem;
-      line-height: 1.2;
-    }
-    .mini-stat span {
-      display: block;
-      font-size: 10px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
       color: var(--muted);
-      margin-top: 4px;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-weight: 600;
+    }
+    .meter-label strong {
+      color: var(--navy);
+      font-size: 18px;
+      letter-spacing: 0;
+      text-transform: none;
     }
 
-    section { padding: 80px 0; }
+    .floating-tag {
+      position: absolute;
+      z-index: 3;
+      background: rgba(255,255,255,.9);
+      border: 1px solid rgba(7,22,47,.08);
+      border-radius: 16px;
+      padding: 12px 14px;
+      box-shadow: 0 16px 30px rgba(7,22,47,.14);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--ink);
+      max-width: 190px;
+    }
+    .floating-tag span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, rgba(240,181,44,.15), rgba(17,56,107,.08));
+      color: var(--navy);
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .floating-tag strong { display: block; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; }
+    .floating-tag small { display: block; color: var(--muted); font-size: 10px; }
+    .tag-one { left: 8px; bottom: 30px; }
+    .tag-two { right: 6px; bottom: 78px; }
+
+    .hero-bottom {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding-top: 24px;
+      color: rgba(255,255,255,.8);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: 12px;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-bottom > div {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px 30px;
+      color: rgba(255,255,255,.9);
+    }
+    .hero-bottom b {
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: .14em;
+    }
+
+    section { padding: 90px 0; }
+    .intro, .solutions, .technology, .industries, .contact-wrap { background: #fff; }
     .soft { background: var(--soft); }
+
     .split {
       display: grid;
       grid-template-columns: 1.1fr .9fr;
-      gap: 34px;
+      gap: 42px;
       align-items: center;
     }
+    .section-label {
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+    .section-label span { color: var(--muted); }
     h2 {
       margin: 0 0 18px;
-      font-size: clamp(2rem, 3vw, 3.1rem);
+      font-size: clamp(2.2rem, 3vw, 3.2rem);
       line-height: 1.08;
       letter-spacing: -.06em;
+      font-family: 'Space Grotesk', 'DM Sans', sans-serif;
+      font-weight: 700;
     }
+    h2 span { color: var(--navy); }
+    .intro-content p,
+    .card p,
+    .industry-card p,
+    .quote-copy p,
+    .contact-box p,
+    .technology-copy p,
     .section-copy {
-      max-width: 760px;
       color: var(--muted);
     }
-    .bullets {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 14px;
+    .text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      font-size: 12px;
     }
-    .bullets li {
-      display: flex;
-      gap: 12px;
-      color: var(--muted);
-    }
-    .bullets li::before {
-      content: "✓";
-      color: var(--gold);
-      font-weight: 900;
-      font-size: 1.2rem;
-      line-height: 1;
-    }
+    .text-link.dark { color: var(--navy); }
 
-    .grid-3 {
+    .solutions-grid,
+    .industries-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 22px;
+      margin-top: 26px;
     }
-    .card {
+    .card,
+    .industry-card,
+    .quote-box,
+    .quote-contact {
       background: #fff;
       border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 24px;
+      border-radius: 18px;
       box-shadow: 0 12px 34px rgba(15,30,50,.05);
     }
-    .card h3 {
+    .card,
+    .industry-card {
+      padding: 24px;
+    }
+    .card small,
+    .industry-card small {
+      color: var(--gold);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-weight: 800;
+      font-size: 11px;
+      display: inline-block;
+      margin-bottom: 12px;
+    }
+    .card h3,
+    .industry-card h3 {
       margin: 0 0 10px;
       font-size: 1.35rem;
-    }
-    .card p {
-      margin: 0;
-      color: var(--muted);
+      line-height: 1.2;
     }
 
-    .stats {
+    .technology-layout {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 42px;
+      align-items: center;
+    }
+    .tech-panel {
+      background: linear-gradient(135deg, var(--navy), var(--navy-2));
+      border-radius: 26px;
+      padding: 26px;
+      color: #fff;
+      box-shadow: var(--shadow);
+    }
+    .tech-panel h3 {
+      margin: 0 0 15px;
+      font-size: 2rem;
+      line-height: 1.1;
+      letter-spacing: -.05em;
+    }
+    .tech-metrics {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .metric {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 14px;
+      padding: 16px;
+    }
+    .metric strong {
+      display: block;
+      font-size: 1.8rem;
+      line-height: 1.1;
+      margin-bottom: 4px;
+      color: var(--gold-soft);
+    }
+    .metric span {
+      color: rgba(255,255,255,.72);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
       gap: 18px;
-      margin-top: 30px;
     }
     .stat {
-      background: linear-gradient(180deg, #fff, #f9fbff);
+      background: #fff;
       border: 1px solid var(--line);
       border-radius: 16px;
       padding: 22px 18px;
@@ -364,220 +643,452 @@
     .stat strong {
       display: block;
       font-size: 2rem;
-      margin-bottom: 6px;
+      margin-bottom: 8px;
     }
-    .stat span {
-      color: var(--muted);
-    }
+    .stat span { color: var(--muted); }
 
-    .contact-box {
+    .quote-wrap {
       display: grid;
-      grid-template-columns: 1.1fr auto;
-      align-items: center;
+      grid-template-columns: 0.9fr 1.1fr;
       gap: 28px;
-      padding: 38px 34px;
-      border-radius: 20px;
-      background: linear-gradient(135deg, var(--navy), var(--blue));
+      align-items: stretch;
+    }
+    .quote-box,
+    .quote-contact {
+      padding: 28px;
+    }
+    .quote-contact {
+      background: linear-gradient(135deg, var(--navy), var(--navy-2));
       color: #fff;
       box-shadow: var(--shadow);
     }
-    .contact-box p {
-      max-width: 620px;
-      color: rgba(255,255,255,.75);
+    .quote-contact ul {
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 0;
+      display: grid;
+      gap: 12px;
+      color: rgba(255,255,255,.8);
     }
-    .contact-actions {
-      display: flex;
-      gap: 14px;
-      flex-wrap: wrap;
+    .quote-contact li::before {
+      content: "✓";
+      color: var(--gold-soft);
+      margin-right: 8px;
+      font-weight: 700;
+    }
+    form {
+      display: grid;
+      gap: 16px;
+    }
+    .field-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+    label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 8px;
+    }
+    input, textarea, select {
+      width: 100%;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 12px 14px;
+      background: #fff;
+      color: var(--ink);
+    }
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+    .form-submit {
+      border: 0;
+      background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+      color: var(--navy);
+      border-radius: 999px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 15px 18px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .form-status {
+      display: none;
+      margin-top: 8px;
+      font-size: 14px;
+      color: #1d8f5e;
+      font-weight: 700;
     }
 
     footer {
-      padding: 30px 0;
-      background: #050f20;
-      color: rgba(255,255,255,.74);
-      font-size: 13px;
+      background: #040d1d;
+      color: rgba(255,255,255,.72);
+      padding: 32px 0 26px;
+      font-size: 14px;
     }
-    .footer-inner {
+    .footer-grid {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 18px;
       flex-wrap: wrap;
     }
-    .footer-brand img {
+    .footer-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: #fff;
+      font-family: 'Space Grotesk', 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .footer-brand .mark {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
       height: 42px;
-      width: auto;
+      border-radius: 12px;
+      background: rgba(246,215,139,.08);
+      border: 1px solid rgba(246,215,139,.25);
+      color: var(--gold-soft);
+    }
+    .footer-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: rgba(255,255,255,.8);
     }
 
-    @media (max-width: 920px) {
-      .nav-links { display: none; }
+    @media (max-width: 980px) {
       .brand { min-width: unset; }
-      .brand img { height: 60px; }
-      .hero-grid, .split, .grid-3, .contact-box { grid-template-columns: 1fr; }
-      .stats { grid-template-columns: repeat(2, 1fr); }
+      .nav-links { display: none; }
+      .menu-toggle { display: inline-flex; flex-direction: column; }
+      .hero-grid,
+      .split,
+      .technology-layout,
+      .quote-wrap { grid-template-columns: 1fr; }
+      .solutions-grid,
+      .industries-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
     }
-    @media (max-width: 560px) {
+    @media (max-width: 640px) {
       .container { width: calc(100% - 28px); }
-      .hero { padding: 64px 0; }
-      .hero h1 { font-size: 2.7rem; }
-      .mini-stat, .stats, .grid-3 { grid-template-columns: 1fr; }
-      .hero-actions, .contact-actions { flex-direction: column; align-items: stretch; }
-      .nav-cta, .hero-actions a, .contact-actions a { text-align: center; }
-      .brand img { height: 58px; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .pulse, .nav-cta::after, .hero-actions a::after, .contact-actions a::after { animation: none; }
-      * { scroll-behavior: auto; }
+      .hero { padding-top: 60px; }
+      .brand-name { letter-spacing: .12em; }
+      .field-row,
+      .solutions-grid,
+      .industries-grid,
+      .stats-grid,
+      .tech-metrics { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .button, .primary-btn, .secondary-btn, .nav-contact { width: 100%; }
+      .quote-box, .quote-contact { padding: 22px; }
+      .hero-bottom { flex-direction: column; align-items: flex-start; }
+      .trust-row { flex-wrap: wrap; }
     }
   </style>
 </head>
 <body>
-  <div class="announcement"><span class="pulse"></span> Industrial solutions that move business forward <a href="blogs.html">Read the latest insights →</a></div>
+  <div class="announcement"><span class="pulse"></span> Industrial solutions that move your business forward <a href="#contact">Start a conversation <span>→</span></a></div>
 
-  <nav class="nav">
+  <nav class="nav" id="nav">
     <div class="container nav-inner">
-      <a class="brand" href="index.html" aria-label="Motion Controls Corporation home">
-        <img src="create-one-polished-corporate-combination-logo-for-motion-c.png" alt="Motion Controls Corporation logo">
+      <a class="brand" href="#top" aria-label="Motion Controls Corporation home">
+        <span class="brand-mark">MCC</span>
+        <span class="brand-divider">|</span>
+        <span class="brand-name">MOTION CONTROLS<br>CORPORATION</span>
       </a>
-      <div class="nav-links">
+
+      <div class="nav-links" id="navLinks">
         <a href="#about">About</a>
         <a href="#solutions">Solutions</a>
         <a href="#technology">Technology</a>
         <a href="#industries">Industries</a>
-        <a href="#contact">Contact</a>
+        <a class="nav-contact" href="#contact">Talk to MCC <span>↗</span></a>
       </div>
-      <a class="nav-cta" href="#contact">Talk to MCC</a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
     </div>
   </nav>
 
-  <main>
+  <main id="top">
     <header class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow"><span>•</span> B2B electrical &amp; industrial solutions</div>
+      <div class="hero-grid container">
+        <div class="hero-copy reveal">
+          <div class="eyebrow"><i></i> B2B electrical &amp; industrial solutions</div>
           <h1>Powering <em>industry.</em><br>Connecting business.</h1>
-          <p class="hero-text">Reliable electrical products, industrial automation, power distribution and B2B procurement support for the people who keep facilities and factories moving.</p>
+          <p class="hero-text">Reliable electrical products, industrial automation and business technology—brought together for the people who keep facilities and factories moving.</p>
           <div class="hero-actions">
-            <a class="primary" href="#solutions">Explore solutions</a>
-            <a class="secondary" href="#contact">Start a conversation</a>
+            <a class="button button-gold" href="#solutions">Explore solutions <span>↗</span></a>
+            <a class="text-link" href="#contact">Speak with our team <span>→</span></a>
+          </div>
+          <div class="trust-row">
+            <div class="avatars"><b>MC</b><b>IE</b><b>+</b></div>
+            <span>Built for professional procurement<br><strong>and long-term partnerships</strong></span>
           </div>
         </div>
 
-        <div class="hero-card">
-          <div class="hero-card-inner">
-            <div class="section-kicker">Why MCC</div>
-            <h3>Practical support for complex requirements.</h3>
-            <p>From power infrastructure to automated plant systems, we help customers source the right solutions, reduce risk and improve operational continuity.</p>
-            <div class="mini-stat">
-              <div><strong>Electrical</strong><span>Systems</span></div>
-              <div><strong>Automation</strong><span>Control</span></div>
-              <div><strong>Procurement</strong><span>Support</span></div>
+        <div class="hero-visual reveal delay-1">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="visual-card">
+            <div class="visual-top">
+              <span class="status"><i></i> SYSTEMS ONLINE</span>
+              <span>01 / 04</span>
             </div>
+            <div class="power-icon"><span>ϟ</span></div>
+            <div class="visual-title">Engineered for<br><strong>momentum.</strong></div>
+            <div class="meter"><span></span></div>
+            <div class="meter-label"><span>Operational efficiency</span><strong>98.4%</strong></div>
           </div>
+          <div class="floating-tag tag-one"><span>⌁</span><div><strong>Smart control</strong><small>Automation ready</small></div></div>
+          <div class="floating-tag tag-two"><span>✓</span><div><strong>Trusted supply</strong><small>Business focused</small></div></div>
+        </div>
+      </div>
+
+      <div class="hero-bottom container">
+        <span>POWERING THE FUTURE OF</span>
+        <div>
+          <b>MANUFACTURING</b>
+          <b>INFRASTRUCTURE</b>
+          <b>ENGINEERING</b>
+          <b>COMMERCE</b>
         </div>
       </div>
     </header>
 
-    <section id="about">
+    <section class="intro" id="about">
       <div class="container split">
-        <div>
-          <div class="section-kicker">01 — The MCC difference</div>
-          <h2>A practical partner for complex requirements.</h2>
-          <p class="section-copy">MCC delivers customer-focused solutions across electrical supply, motor control, power distribution and business technology. Our approach is practical, responsive and designed to help operations run smoothly.</p>
+        <div class="section-label reveal">01 <span>—</span> The MCC difference</div>
+        <div class="intro-content reveal delay-1">
+          <h2>A practical partner for <span>complex requirements.</span></h2>
+          <p>Motion Controls Corporation supports businesses that need dependable electrical products, industrial control solutions and professional sourcing support. We combine product supply with modern business-management technology to make operations simpler.</p>
+          <a class="text-link dark" href="#solutions">Discover our capabilities <span>→</span></a>
         </div>
-        <div>
-          <ul class="bullets">
-            <li>Electrical components and power distribution support for commercial and industrial environments.</li>
-            <li>Industrial automation systems including control, monitoring and operational visibility.</li>
-            <li>Procurement and project coordination for faster, lower-risk sourcing decisions.</li>
+      </div>
+    </section>
+
+    <section class="solutions soft" id="solutions">
+      <div class="container">
+        <div class="section-label reveal">02 <span>—</span> What we do</div>
+        <div class="section-heading reveal">
+          <h2>Solutions with purpose.<br><span>Results that last.</span></h2>
+        </div>
+        <div class="solutions-grid">
+          <article class="card reveal">
+            <small>01</small>
+            <h3>Power distribution</h3>
+            <p>Protection equipment, switchgear and components that keep commercial and industrial systems resilient.</p>
+          </article>
+          <article class="card reveal">
+            <small>02</small>
+            <h3>Industrial automation</h3>
+            <p>PLC, HMI and SCADA solutions that improve visibility, control and plant performance.</p>
+          </article>
+          <article class="card reveal">
+            <small>03</small>
+            <h3>Motor control</h3>
+            <p>VFDs, starters, contactors and overload protection designed for efficient, safe operation.</p>
+          </article>
+          <article class="card reveal">
+            <small>04</small>
+            <h3>Electrical components</h3>
+            <p>Reliable sourcing support for factories, facilities and specialist business environments.</p>
+          </article>
+          <article class="card reveal">
+            <small>05</small>
+            <h3>B2B procurement</h3>
+            <p>Structured enquiry support, quotation review and supplier coordination for better buying decisions.</p>
+          </article>
+          <article class="card reveal">
+            <small>06</small>
+            <h3>Project support</h3>
+            <p>Commercial and technical coordination that keeps recurring project requirements moving forward.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="technology" id="technology">
+      <div class="container technology-layout">
+        <div class="tech-panel reveal">
+          <div class="section-label" style="color: var(--gold-soft); margin-bottom: 12px;">03 <span style="color: rgba(255,255,255,.7);">—</span> Business technology</div>
+          <h3>Product expertise. Digital advantage.</h3>
+          <p style="color: rgba(255,255,255,.75); margin: 0;">From supplier coordination to smarter business workflows, we help organisations improve operational visibility and commercial efficiency.</p>
+          <div class="tech-metrics">
+            <div class="metric"><strong>24/7</strong><span>Operational support</span></div>
+            <div class="metric"><strong>98.4%</strong><span>Efficiency target</span></div>
+            <div class="metric"><strong>36+</strong><span>Open project streams</span></div>
+            <div class="metric"><strong>IMS</strong><span>Inventory insight</span></div>
+          </div>
+        </div>
+
+        <div class="technology-copy reveal delay-1">
+          <div class="section-label">Powered by capability</div>
+          <h2>Built for the way modern businesses operate.</h2>
+          <p>We connect supply, control and business processes to help customers move faster, reduce risk and keep systems running smoothly over time.</p>
+          <div class="stats-grid">
+            <div class="stat"><strong>IMS</strong><span>Inventory management</span></div>
+            <div class="stat"><strong>CRM</strong><span>Customer management</span></div>
+            <div class="stat"><strong>Quotations</strong><span>Business workflows</span></div>
+            <div class="stat"><strong>Support</strong><span>Operational continuity</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="industries soft" id="industries">
+      <div class="container">
+        <div class="section-label reveal">04 <span>—</span> Who we serve</div>
+        <div class="reveal">
+          <h2>Keeping the world <span>in motion.</span></h2>
+        </div>
+        <div class="industries-grid">
+          <article class="industry-card reveal">
+            <small>01</small>
+            <h3>Manufacturing</h3>
+            <p>Electrical and control systems for production, safety and uptime in operational facilities.</p>
+          </article>
+          <article class="industry-card reveal">
+            <small>02</small>
+            <h3>Commercial buildings</h3>
+            <p>Power and infrastructure support for modern facilities and building management systems.</p>
+          </article>
+          <article class="industry-card reveal">
+            <small>03</small>
+            <h3>System integrators</h3>
+            <p>Reliable component sourcing and project coordination for specification-led delivery teams.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-wrap" id="contact">
+      <div class="container quote-wrap">
+        <div class="quote-contact reveal">
+          <div class="section-label" style="color: var(--gold-soft);">Get started</div>
+          <h2 style="color:#fff; margin-bottom:12px;">Request a quote</h2>
+          <p style="color: rgba(255,255,255,.8); margin: 0 0 18px;">Tell us what you need and we’ll help identify the most suitable products, systems and sourcing support for your project.</p>
+          <ul>
+            <li>Electrical component sourcing</li>
+            <li>Motor control and automation support</li>
+            <li>Procurement and commercial guidance</li>
           </ul>
         </div>
-      </div>
-    </section>
 
-    <section class="soft" id="solutions">
-      <div class="container">
-        <div class="section-kicker">02 — What we do</div>
-        <h2>Solutions with purpose.</h2>
-        <div class="grid-3">
-          <div class="card">
-            <h3>Power distribution</h3>
-            <p>Protective equipment, switchgear and supply solutions built around dependable facility performance.</p>
-          </div>
-          <div class="card">
-            <h3>Motor control</h3>
-            <p>VFDs, starters, contactors and overload protection for efficient and reliable equipment operation.</p>
-          </div>
-          <div class="card">
-            <h3>Industrial automation</h3>
-            <p>PLC, HMI, SCADA and automation technology that improves visibility, consistency and control.</p>
-          </div>
-          <div class="card">
-            <h3>Electrical components</h3>
-            <p>Reliable sourcing support for systems, facilities and specialist industrial applications.</p>
-          </div>
-          <div class="card">
-            <h3>B2B procurement</h3>
-            <p>Structured enquiries, quotations and supplier coordination that support cleaner purchasing decisions.</p>
-          </div>
-          <div class="card">
-            <h3>Project support</h3>
-            <p>Commercial and technical coordination for industrial projects and recurring operational requirements.</p>
-          </div>
-        </div>
-      </div>
-    </section>
+        <div class="quote-box reveal delay-1">
+          <form id="quoteForm" novalidate>
+            <div class="field-row">
+              <div>
+                <label for="name">Full name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" required>
+              </div>
+              <div>
+                <label for="company">Company</label>
+                <input id="company" name="company" type="text" placeholder="Business name" required>
+              </div>
+            </div>
 
-    <section id="technology">
-      <div class="container">
-        <div class="section-kicker">03 — Business technology</div>
-        <h2>Product experience built for business operations.</h2>
-        <div class="stats">
-          <div class="stat"><strong>IMS</strong><span>Inventory management</span></div>
-          <div class="stat"><strong>CRM</strong><span>Customer management</span></div>
-          <div class="stat"><strong>Quotations</strong><span>Business workflows</span></div>
-          <div class="stat"><strong>Support</strong><span>Operational continuity</span></div>
-        </div>
-      </div>
-    </section>
+            <div class="field-row">
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@company.com" required>
+              </div>
+              <div>
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" placeholder="+44..." required>
+              </div>
+            </div>
 
-    <section id="industries" class="soft">
-      <div class="container">
-        <div class="section-kicker">04 — Who we serve</div>
-        <h2>Keeping the world in motion.</h2>
-        <div class="grid-3">
-          <div class="card"><h3>Manufacturing</h3><p>Electrical and control systems for production, safety and uptime.</p></div>
-          <div class="card"><h3>Commercial buildings</h3><p>Power and infrastructure support for modern facilities and plant operations.</p></div>
-          <div class="card"><h3>System integrators</h3><p>Reliable component sourcing and project coordination for delivery teams.</p></div>
-        </div>
-      </div>
-    </section>
+            <div>
+              <label for="service">Requirement</label>
+              <select id="service" name="service" required>
+                <option value="">Select a service</option>
+                <option>Power distribution</option>
+                <option>Industrial automation</option>
+                <option>Motor control</option>
+                <option>Electrical components</option>
+                <option>B2B procurement</option>
+                <option>Project support</option>
+              </select>
+            </div>
 
-    <section id="contact">
-      <div class="container">
-        <div class="contact-box">
-          <div>
-            <div class="section-kicker" style="color:#ffd36b; margin-bottom:12px;">Start a business conversation</div>
-            <h2 style="margin-bottom:10px;">Need an electrical or industrial solution?</h2>
-            <p>Tell us about your requirements and we can help identify the right products, systems and support approach.</p>
-          </div>
-          <div class="contact-actions">
-            <a class="primary" href="tel:01791665627">Call 01791665627</a>
-            <a class="secondary" href="mailto:Maksud.mr@gmail.com">Email MCC</a>
-          </div>
+            <div>
+              <label for="message">Project details</label>
+              <textarea id="message" name="message" placeholder="Please share details of your requirements, timeline, and any specifications..." required></textarea>
+            </div>
+
+            <button type="submit" class="form-submit">Request quote</button>
+            <div id="formStatus" class="form-status" aria-live="polite">Your request has been received. We’ll be in touch shortly.</div>
+          </form>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container footer-inner">
-      <a class="footer-brand" href="index.html" aria-label="Motion Controls Corporation home">
-        <img src="create-one-polished-corporate-combination-logo-for-motion-c.png" alt="Motion Controls Corporation logo">
-      </a>
-      <div>01791665627 · Maksud.mr@gmail.com</div>
-      <div>© Motion Controls Corporation</div>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <span class="mark">MCC</span>
+        <span>MOTION CONTROLS CORPORATION</span>
+      </div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#technology">Technology</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div>© 2026 Motion Controls Corporation. All rights reserved.</div>
     </div>
   </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    if (menuToggle && navLinks) {
+      menuToggle.addEventListener('click', () => {
+        const open = navLinks.style.display === 'flex';
+        navLinks.style.display = open ? 'none' : 'flex';
+        navLinks.style.flexDirection = 'column';
+        navLinks.style.position = 'absolute';
+        navLinks.style.top = '78px';
+        navLinks.style.right = '20px';
+        navLinks.style.background = 'rgba(7,22,47,.98)';
+        navLinks.style.padding = '18px';
+        navLinks.style.border = '1px solid rgba(255,255,255,.08)';
+        navLinks.style.borderRadius = '14px';
+        navLinks.style.boxShadow = '0 18px 40px rgba(7,22,47,.25)';
+        menuToggle.setAttribute('aria-expanded', String(!open));
+      });
+    }
+
+    const quoteForm = document.getElementById('quoteForm');
+    const formStatus = document.getElementById('formStatus');
+    if (quoteForm) {
+      quoteForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const form = event.currentTarget;
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        formStatus.style.display = 'block';
+        form.reset();
+      });
+    }
+  </script>
 </body>
 </html>
