@@ -797,6 +797,10 @@
       .trust-row { flex-wrap: wrap; }
     }
   </style>
+  <script>function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement("script");
+o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n,o.async=!0,o.defer=!0,
+o.onload=function(){window.trackingFunctions.onLoad({appId:"6a75369c3fce4c001cb7d48a"})},
+document.head.appendChild(o)}initApollo();</script>
 </head>
 <body>
   <div class="announcement"><span class="pulse"></span> Industrial solutions that move your business forward <a href="#contact">Start a conversation <span>→</span></a></div>
@@ -874,7 +878,7 @@
         <div class="section-label reveal">01 <span>—</span> The MCC difference</div>
         <div class="intro-content reveal delay-1">
           <h2>A practical partner for <span>complex requirements.</span></h2>
-          <p>Motion Controls Corporation supports businesses that need dependable electrical products, industrial control solutions and professional sourcing support. We combine product supply with modern business-management technology to make operations simpler.</p>
+          <p>Motion Controls Corporation supports businesses that need dependable electrical products, industrial control solutions and professional sourcing support. We combine product supply with operational understanding to deliver value across power, automation, support and project planning.</p>
           <a class="text-link dark" href="#solutions">Discover our capabilities <span>→</span></a>
         </div>
       </div>
@@ -926,7 +930,7 @@
         <div class="tech-panel reveal">
           <div class="section-label" style="color: var(--gold-soft); margin-bottom: 12px;">03 <span style="color: rgba(255,255,255,.7);">—</span> Business technology</div>
           <h3>Product expertise. Digital advantage.</h3>
-          <p style="color: rgba(255,255,255,.75); margin: 0;">From supplier coordination to smarter business workflows, we help organisations improve operational visibility and commercial efficiency.</p>
+          <p style="color: rgba(255,255,255,.75); margin: 0;">From supplier coordination to smarter business workflows, we help organisations improve operational visibility and commercial efficiency across every stage of a project.</p>
           <div class="tech-metrics">
             <div class="metric"><strong>24/7</strong><span>Operational support</span></div>
             <div class="metric"><strong>98.4%</strong><span>Efficiency target</span></div>
@@ -1000,7 +1004,6 @@
                 <input id="company" name="company" type="text" placeholder="Business name" required>
               </div>
             </div>
-
             <div class="field-row">
               <div>
                 <label for="email">Email</label>
@@ -1008,30 +1011,25 @@
               </div>
               <div>
                 <label for="phone">Phone</label>
-                <input id="phone" name="phone" type="tel" placeholder="+44..." required>
+                <input id="phone" name="phone" type="tel" placeholder="Contact number">
               </div>
             </div>
-
             <div>
-              <label for="service">Requirement</label>
-              <select id="service" name="service" required>
-                <option value="">Select a service</option>
-                <option>Power distribution</option>
-                <option>Industrial automation</option>
-                <option>Motor control</option>
-                <option>Electrical components</option>
-                <option>B2B procurement</option>
-                <option>Project support</option>
+              <label for="industry">Industry</label>
+              <select id="industry" name="industry">
+                <option>Manufacturing</option>
+                <option>Commercial building</option>
+                <option>Industrial services</option>
+                <option>Infrastructure</option>
+                <option>Other</option>
               </select>
             </div>
-
             <div>
               <label for="message">Project details</label>
-              <textarea id="message" name="message" placeholder="Please share details of your requirements, timeline, and any specifications..." required></textarea>
+              <textarea id="message" name="message" placeholder="Tell us about your requirements"></textarea>
             </div>
-
-            <button type="submit" class="form-submit">Request quote</button>
-            <div id="formStatus" class="form-status" aria-live="polite">Your request has been received. We’ll be in touch shortly.</div>
+            <button class="form-submit" type="submit">Send enquiry</button>
+            <div class="form-status" id="formStatus" aria-live="polite">Thanks — your enquiry has been received.</div>
           </form>
         </div>
       </div>
@@ -1040,55 +1038,16 @@
 
   <footer>
     <div class="container footer-grid">
-      <div class="footer-brand">
-        <span class="mark">MCC</span>
-        <span>MOTION CONTROLS CORPORATION</span>
-      </div>
+      <div class="footer-brand"><span class="mark">MCC</span> Motion Controls Corporation</div>
       <div class="footer-links">
+        <span>© 2025 Motion Controls Corporation</span>
         <a href="#about">About</a>
         <a href="#solutions">Solutions</a>
-        <a href="#technology">Technology</a>
         <a href="#contact">Contact</a>
       </div>
-      <div>© 2026 Motion Controls Corporation. All rights reserved.</div>
     </div>
   </footer>
 
-  <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
-    if (menuToggle && navLinks) {
-      menuToggle.addEventListener('click', () => {
-        const open = navLinks.style.display === 'flex';
-        navLinks.style.display = open ? 'none' : 'flex';
-        navLinks.style.flexDirection = 'column';
-        navLinks.style.position = 'absolute';
-        navLinks.style.top = '78px';
-        navLinks.style.right = '20px';
-        navLinks.style.background = 'rgba(7,22,47,.98)';
-        navLinks.style.padding = '18px';
-        navLinks.style.border = '1px solid rgba(255,255,255,.08)';
-        navLinks.style.borderRadius = '14px';
-        navLinks.style.boxShadow = '0 18px 40px rgba(7,22,47,.25)';
-        menuToggle.setAttribute('aria-expanded', String(!open));
-      });
-    }
-
-    const quoteForm = document.getElementById('quoteForm');
-    const formStatus = document.getElementById('formStatus');
-    if (quoteForm) {
-      quoteForm.addEventListener('submit', function (event) {
-        event.preventDefault();
-        const form = event.currentTarget;
-        if (!form.checkValidity()) {
-          form.reportValidity();
-          return;
-        }
-
-        formStatus.style.display = 'block';
-        form.reset();
-      });
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
