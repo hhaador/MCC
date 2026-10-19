@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Allow: /blogs.html
+Allow: /industrial-ai-predictive-maintenance-uk.html
 
 Sitemap: https://mcontrolsco.com/sitemap.xml
