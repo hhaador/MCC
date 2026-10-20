@@ -72,6 +72,14 @@ if (form) {
 
     localStorage.setItem('mccLeadSubmission', JSON.stringify(payload));
 
+    const waMessage = encodeURIComponent(
+      `Hello MCC, I am ${name} from ${company}. My email is ${email}. ${payload.phone ? `My phone is ${payload.phone}.` : ''} I need support for: ${payload.interest}. ${payload.message ? `Project details: ${payload.message}` : ''}`
+    );
+
+    if (window.confirm('Would you like to send this enquiry on WhatsApp to the MCC team?')) {
+      window.open(`https://wa.me/44791665627?text=${waMessage}`, '_blank');
+    }
+
     status.textContent = `Thank you, ${name}. Your requirement has been recorded and the MCC team will be in touch soon.`;
     status.className = 'form-status show success';
     form.reset();
