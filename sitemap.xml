@@ -6,6 +6,11 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://mcontrolsco.com/contact.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://mcontrolsco.com/blogs.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -14,5 +19,45 @@
     <loc>https://mcontrolsco.com/industrial-ai-predictive-maintenance-uk.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://mcontrolsco.com/power-distribution-fundamentals-commercial-buildings.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mcontrolsco.com/motor-control-solution-facility.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mcontrolsco.com/plc-hmi-scada-automation-stack.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mcontrolsco.com/industrial-component-enquiry-checklist.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mcontrolsco.com/reducing-procurement-risk-electrical-projects.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mcontrolsco.com/industrial-automation-trends-growing-manufacturers.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mcontrolsco.com/switchgear-protection-buyers-guide.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mcontrolsco.com/building-better-long-term-supplier-partnerships.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

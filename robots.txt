@@ -1,6 +1,16 @@
 User-agent: *
 Allow: /
 Allow: /blogs.html
+Allow: /contact.html
 Allow: /industrial-ai-predictive-maintenance-uk.html
+Allow: /power-distribution-fundamentals-commercial-buildings.html
+Allow: /motor-control-solution-facility.html
+Allow: /plc-hmi-scada-automation-stack.html
+Allow: /industrial-component-enquiry-checklist.html
+Allow: /reducing-procurement-risk-electrical-projects.html
+Allow: /industrial-automation-trends-growing-manufacturers.html
+Allow: /switchgear-protection-buyers-guide.html
+Allow: /building-better-long-term-supplier-partnerships.html
 
 Sitemap: https://mcontrolsco.com/sitemap.xml
+Host: https://mcontrolsco.com

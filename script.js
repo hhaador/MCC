@@ -10,7 +10,7 @@ const articles = [
   { title: 'Building Better Long-Term Supplier Partnerships', category: 'B2B strategy', date: '2026-05-18', excerpt: 'The practical habits that create stronger communication, better planning and more resilient supplier relationships.', link: 'building-better-long-term-supplier-partnerships.html' },
 ];
 
-const whatsappNumber = '44791665627';
+const whatsappNumber = '8801791665627';
 const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Hello MCC, I want to discuss an industrial or electrical requirement.')}`;
 
 const menu = document.querySelector('.menu-toggle');
