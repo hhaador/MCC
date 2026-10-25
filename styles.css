@@ -73,19 +73,10 @@ button, input, select, textarea { font: inherit; }
   gap: 12px;
   color: #fff;
 }
-.brand-mark {
-  width: 52px;
+.brand img {
   height: 52px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, rgba(245, 216, 138, 0.2), rgba(217, 163, 59, 0.1));
-  color: var(--gold-soft);
-  border-radius: 16px;
-  border: 1px solid rgba(245, 216, 138, 0.4);
-  font-weight: 900;
-  letter-spacing: 0.08em;
-  font-size: 18px;
+  width: auto;
+  display: block;
 }
 .brand-text {
   display: flex;
@@ -694,8 +685,13 @@ textarea {
   justify-content: center;
   border: 1px solid rgba(245, 216, 138, 0.3);
   background: rgba(245, 216, 138, 0.08);
-  color: var(--gold-soft);
-  font-size: 18px;
+  overflow: hidden;
+}
+.footer-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .search-box {
