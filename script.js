@@ -1,15 +1,33 @@
 const articles = [
-  { title: 'Motion Controls Corporation (MCC): Industrial Automation, Electrical Components, and B2B Sourcing in Bangladesh', category: 'Industrial sourcing', date: '2026-10-26', excerpt: 'A practical overview of how MCC supports industrial automation, electrical components, motor control and B2B procurement requirements in Bangladesh.', link: 'motion-controls-corporation-bangladesh-industrial-automation-electrical-components-b2b-sourcing.html' },
-  { title: 'AI-Driven Predictive Maintenance for UK Industrial Electrical Systems', category: 'Predictive maintenance', date: '2026-10-26', excerpt: 'A practical guide to reducing downtime and improving reliability through smarter condition monitoring and AI-driven maintenance planning.', link: 'industrial-ai-predictive-maintenance-uk.html' },
-  { title: 'How to Choose the Right Motor Control Solution for Your Facility', category: 'Motor control', date: '2026-01-12', excerpt: 'A practical guide to VFDs, starters, contactors and overload protection for reliable industrial performance.', link: 'motor-control-solution-facility.html' },
-  { title: 'Power Distribution Fundamentals for Commercial Buildings', category: 'Power distribution', date: '2026-01-28', excerpt: 'The key components and planning considerations behind safe, resilient commercial electrical systems.', link: 'power-distribution-fundamentals-commercial-buildings.html' },
-  { title: 'PLC, HMI and SCADA: Understanding the Automation Stack', category: 'Industrial automation', date: '2026-02-09', excerpt: 'Learn how core automation technologies work together to improve visibility, control and productivity.', link: 'plc-hmi-scada-automation-stack.html' },
-  { title: 'What to Include in an Industrial Component Enquiry', category: 'Procurement', date: '2026-02-19', excerpt: 'A concise checklist for helping suppliers return accurate quotations faster and with less back-and-forth.', link: 'industrial-component-enquiry-checklist.html' },
-  { title: 'Reducing Procurement Risk in Electrical Projects', category: 'Project support', date: '2026-03-17', excerpt: 'How structured sourcing, documentation and supplier coordination can protect project outcomes and reduce risk.', link: 'reducing-procurement-risk-electrical-projects.html' },
-  { title: 'Industrial Automation Trends for Growing Manufacturers', category: 'Industry insight', date: '2026-04-02', excerpt: 'A forward-looking view of connected control, data visibility and practical technology adoption for industrial growth.', link: 'industrial-automation-trends-growing-manufacturers.html' },
-  { title: 'Switchgear and Protection: A Buyer’s Quick Guide', category: 'Electrical components', date: '2026-04-16', excerpt: 'Understand the role of protection systems and the key questions to ask before choosing switchgear and associated equipment.', link: 'switchgear-protection-buyers-guide.html' },
-  { title: 'Building Better Long-Term Supplier Partnerships', category: 'B2B strategy', date: '2026-05-18', excerpt: 'The practical habits that create stronger communication, better planning and more resilient supplier relationships.', link: 'building-better-long-term-supplier-partnerships.html' }
+  { title: 'Motion Controls Corporation (MCC): Industrial Automation, Electrical Components, and B2B Sourcing in Bangladesh', category: 'Industrial sourcing', date: '2026-10-26', excerpt: 'A practical guide to sourcing industrial electrical components, control systems and procurement support in Bangladesh.', link: 'motion-controls-corporation-bangladesh-industrial-automation-electrical-components-b2b-sourcing.html' },
+  { title: 'AI-Driven Predictive Maintenance for UK Industrial Electrical Systems', category: 'Predictive maintenance', date: '2026-10-26', excerpt: 'A practical guide to reducing downtime and improving asset visibility across industrial electrical systems.', link: 'industrial-ai-predictive-maintenance-uk.html' },
+  { title: 'How to Choose the Right Motor Control Solution for Your Facility', category: 'Motor control', date: '2026-01-12', excerpt: 'A practical guide to VFDs, starters, contactors and overload protection for reliable performance.', link: 'motor-control-solution-facility.html' },
+  { title: 'Power Distribution Fundamentals for Commercial Buildings', category: 'Power distribution', date: '2026-01-28', excerpt: 'The key components and planning considerations behind safe, resilient commercial distribution systems.', link: 'power-distribution-fundamentals-commercial-buildings.html' },
+  { title: 'PLC, HMI and SCADA: Understanding the Automation Stack', category: 'Industrial automation', date: '2026-02-09', excerpt: 'Learn how core automation technologies work together to improve visibility, control and efficiency.', link: 'plc-hmi-scada-automation-stack.html' },
+  { title: 'What to Include in an Industrial Component Enquiry', category: 'Procurement', date: '2026-02-19', excerpt: 'A concise checklist for helping suppliers return accurate quotations faster and with fewer delays.', link: 'industrial-component-enquiry-checklist.html' },
+  { title: 'Reducing Procurement Risk in Electrical Projects', category: 'Project support', date: '2026-03-17', excerpt: 'How structured sourcing, documentation and supplier coordination can protect project delivery.', link: 'reducing-procurement-risk-electrical-projects.html' },
+  { title: 'Industrial Automation Trends for Growing Manufacturers', category: 'Industry insight', date: '2026-04-02', excerpt: 'A forward-looking view of connected control, data visibility and practical technology adoption.', link: 'industrial-automation-trends-growing-manufacturers.html' },
+  { title: 'Switchgear and Protection: A Buyer’s Quick Guide', category: 'Electrical components', date: '2026-04-16', excerpt: 'Understand the role of protection systems and the key questions to ask before specification.', link: 'switchgear-protection-buyers-guide.html' },
+  { title: 'Building Better Long-Term Supplier Partnerships', category: 'B2B strategy', date: '2026-05-18', excerpt: 'The practical habits that create stronger communication, better planning and more resilient sourcing.', link: 'building-better-long-term-supplier-partnerships.html' },
 ];
+
+function initApollo() {
+  const n = Math.random().toString(36).substring(7);
+  const o = document.createElement('script');
+  o.src = `https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache=${n}`;
+  o.async = true;
+  o.defer = true;
+  o.onload = function () {
+    if (window.trackingFunctions && typeof window.trackingFunctions.onLoad === 'function') {
+      window.trackingFunctions.onLoad({ appId: '6a75369c3fce4c001cb7d48a' });
+    }
+  };
+  document.head.appendChild(o);
+}
+
+if (typeof window !== 'undefined') {
+  initApollo();
+}
 
 const whatsappNumber = '8801791665627';
 const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Hello MCC, I want to discuss an industrial or electrical requirement.')}`;
@@ -78,7 +96,7 @@ if (form) {
 
     const emailSubject = encodeURIComponent(`New MCC enquiry from ${name} (${company})`);
     const emailBody = encodeURIComponent(
-      `Name: ${name}\nCompany: ${company}\nEmail: ${email}\nPhone: ${payload.phone || 'Not provided'}\nService required: ${payload.interest}\nProject details:\n${payload.message || 'No details provided'}`
+      `Name: ${name}\nCompany: ${company}\nEmail: ${email}\nPhone: ${payload.phone || 'Not provided'}\nService required: ${payload.interest}\nProject details:\n${payload.message || 'No details provided.'}`
     );
 
     const mailtoLink = `mailto:info@mcontrolsco.com?subject=${emailSubject}&body=${emailBody}`;
