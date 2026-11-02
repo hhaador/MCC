@@ -1,165 +1,266 @@
-const articles = [
-  { title: 'Motion Controls Corporation (MCC): Industrial Automation, Electrical Components, and B2B Sourcing in Bangladesh', category: 'Industrial sourcing', date: '2026-10-26', excerpt: 'A practical guide to sourcing industrial electrical components, control systems and procurement support in Bangladesh.', link: 'motion-controls-corporation-bangladesh-industrial-automation-electrical-components-b2b-sourcing.html' },
-  { title: 'AI-Driven Predictive Maintenance for UK Industrial Electrical Systems', category: 'Predictive maintenance', date: '2026-10-26', excerpt: 'A practical guide to reducing downtime and improving asset visibility across industrial electrical systems.', link: 'industrial-ai-predictive-maintenance-uk.html' },
-  { title: 'How to Choose the Right Motor Control Solution for Your Facility', category: 'Motor control', date: '2026-01-12', excerpt: 'A practical guide to VFDs, starters, contactors and overload protection for reliable performance.', link: 'motor-control-solution-facility.html' },
-  { title: 'Power Distribution Fundamentals for Commercial Buildings', category: 'Power distribution', date: '2026-01-28', excerpt: 'The key components and planning considerations behind safe, resilient commercial distribution systems.', link: 'power-distribution-fundamentals-commercial-buildings.html' },
-  { title: 'PLC, HMI and SCADA: Understanding the Automation Stack', category: 'Industrial automation', date: '2026-02-09', excerpt: 'Learn how core automation technologies work together to improve visibility, control and efficiency.', link: 'plc-hmi-scada-automation-stack.html' },
-  { title: 'What to Include in an Industrial Component Enquiry', category: 'Procurement', date: '2026-02-19', excerpt: 'A concise checklist for helping suppliers return accurate quotations faster and with fewer delays.', link: 'industrial-component-enquiry-checklist.html' },
-  { title: 'Reducing Procurement Risk in Electrical Projects', category: 'Project support', date: '2026-03-17', excerpt: 'How structured sourcing, documentation and supplier coordination can protect project delivery.', link: 'reducing-procurement-risk-electrical-projects.html' },
-  { title: 'Industrial Automation Trends for Growing Manufacturers', category: 'Industry insight', date: '2026-04-02', excerpt: 'A forward-looking view of connected control, data visibility and practical technology adoption.', link: 'industrial-automation-trends-growing-manufacturers.html' },
-  { title: 'Switchgear and Protection: A Buyer’s Quick Guide', category: 'Electrical components', date: '2026-04-16', excerpt: 'Understand the role of protection systems and the key questions to ask before specification.', link: 'switchgear-protection-buyers-guide.html' },
-  { title: 'Building Better Long-Term Supplier Partnerships', category: 'B2B strategy', date: '2026-05-18', excerpt: 'The practical habits that create stronger communication, better planning and more resilient sourcing.', link: 'building-better-long-term-supplier-partnerships.html' },
-];
+const AUTHORIZED_EMAILS = ['hhaador24@gmail.com', 'maksudr.mr@gmail.com'];
 
-function initApollo() {
-  const n = Math.random().toString(36).substring(7);
-  const o = document.createElement('script');
-  o.src = `https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache=${n}`;
-  o.async = true;
-  o.defer = true;
-  o.onload = function () {
-    if (window.trackingFunctions && typeof window.trackingFunctions.onLoad === 'function') {
-      window.trackingFunctions.onLoad({ appId: '6a75369c3fce4c001cb7d48a' });
-    }
+const formatCurrency = (value) => {
+  const numeric = Number(value) || 0;
+  return new Intl.NumberFormat('en-US').format(numeric);
+};
+
+const numberToWords = (value) => {
+  const whole = Math.floor(Number(value) || 0);
+  const ones = ['', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'];
+  const teens = ['Ten', 'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'];
+  const tens = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
+
+  const groupToWords = (num) => {
+    if (num === 0) return '';
+    if (num < 10) return ones[num];
+    if (num < 20) return teens[num - 10];
+    const rem = num % 10;
+    return `${tens[Math.floor(num / 10)]}${rem ? ` ${ones[rem]}` : ''}`;
   };
-  document.head.appendChild(o);
-}
 
-if (typeof window !== 'undefined') {
-  initApollo();
-}
+  const convert = (num) => {
+    if (num === 0) return 'Zero';
+    const lakh = Math.floor(num / 100000);
+    const thousand = Math.floor((num % 100000) / 1000);
+    const remainder = num % 1000;
+    let parts = [];
 
-const whatsappNumber = '8801791665627';
-const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Hello MCC, I want to discuss an industrial or electrical requirement.')}`;
+    if (lakh) parts.push(`${groupToWords(lakh)} Lakh`);
+    if (thousand) parts.push(`${groupToWords(thousand)} Thousand`);
+    if (remainder) parts.push(groupToWords(remainder));
+    return parts.join(' ');
+  };
 
-const menu = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
-if (menu && navLinks) {
-  menu.addEventListener('click', () => {
-    const open = navLinks.classList.toggle('open');
-    menu.setAttribute('aria-expanded', String(open));
-  });
+  let result = convert(whole);
+  if (!result) result = 'Zero';
+  return `${result} Taka`;
+};
 
-  navLinks.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      menu.setAttribute('aria-expanded', 'false');
-    });
-  });
-}
+const invoiceAccessGate = document.getElementById('invoiceAccessGate');
+const invoiceBuilder = document.getElementById('invoiceBuilder');
+const invoiceAccessInput = document.getElementById('invoiceAccessEmail');
+const invoiceAccessBtn = document.getElementById('invoiceAccessBtn');
+const invoiceAccessError = document.getElementById('invoiceAccessError');
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
+const setAccessMessage = (message, type = 'error') => {
+  if (!invoiceAccessError) return;
+  invoiceAccessError.textContent = message;
+  invoiceAccessError.className = `form-status show ${type}`;
+};
 
-document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+const allowInvoiceAccess = (email) => {
+  const normalized = (email || '').trim().toLowerCase();
+  return AUTHORIZED_EMAILS.includes(normalized);
+};
 
-const yearNode = document.getElementById('year');
-if (yearNode) {
-  yearNode.textContent = new Date().getFullYear();
-}
+const revealInvoiceBuilder = () => {
+  if (invoiceAccessGate) invoiceAccessGate.classList.add('hidden');
+  if (invoiceBuilder) invoiceBuilder.classList.remove('hidden');
+};
 
-const form = document.querySelector('[data-form="lead"]');
-if (form) {
-  const status = document.getElementById('formStatus');
-
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-
-    const data = new FormData(form);
-    const name = (data.get('name') || '').toString().trim();
-    const company = (data.get('company') || '').toString().trim();
-    const email = (data.get('email') || '').toString().trim();
-
-    if (!name || !company || !email) {
-      status.textContent = 'Please fill in your name, company and email before submitting.';
-      status.className = 'form-status show error';
+if (invoiceAccessBtn) {
+  invoiceAccessBtn.addEventListener('click', () => {
+    const email = invoiceAccessInput.value.trim();
+    if (!allowInvoiceAccess(email)) {
+      setAccessMessage('Access denied. Only approved MCC emails can open this invoice portal.', 'error');
       return;
     }
 
-    const payload = {
-      name,
-      company,
-      email,
-      phone: (data.get('phone') || '').toString().trim(),
-      interest: (data.get('interest') || '').toString().trim(),
-      message: (data.get('message') || '').toString().trim(),
-      createdAt: new Date().toISOString()
-    };
-
-    localStorage.setItem('mccLeadSubmission', JSON.stringify(payload));
-
-    const emailSubject = encodeURIComponent(`New MCC enquiry from ${name} (${company})`);
-    const emailBody = encodeURIComponent(
-      `Name: ${name}\nCompany: ${company}\nEmail: ${email}\nPhone: ${payload.phone || 'Not provided'}\nService required: ${payload.interest}\nProject details:\n${payload.message || 'No details provided.'}`
-    );
-
-    const mailtoLink = `mailto:info@mcontrolsco.com?subject=${emailSubject}&body=${emailBody}`;
-    window.location.href = mailtoLink;
-
-    status.textContent = `Thank you, ${name}. Your enquiry has been prepared for info@mcontrolsco.com. Please complete the email prompt to send it.`;
-    status.className = 'form-status show success';
-    form.reset();
+    sessionStorage.setItem('mccInvoiceAccessEmail', email.toLowerCase());
+    setAccessMessage('Access granted.', 'success');
+    revealInvoiceBuilder();
   });
 }
 
-const whatsappButtons = document.querySelectorAll('[data-whatsapp="true"]');
-whatsappButtons.forEach((button) => {
-  button.setAttribute('href', whatsappLink);
-  button.setAttribute('target', '_blank');
-  button.setAttribute('rel', 'noopener noreferrer');
+const savedEmail = sessionStorage.getItem('mccInvoiceAccessEmail');
+if (savedEmail && allowInvoiceAccess(savedEmail)) {
+  if (invoiceAccessInput) invoiceAccessInput.value = savedEmail;
+  revealInvoiceBuilder();
+}
+
+const createProductRow = (data = {}) => {
+  const row = document.createElement('tr');
+  row.className = 'invoice-item-row';
+
+  const productName = data.productName || '';
+  const productBrand = data.productBrand || '';
+  const qty = data.qty || 1;
+  const unitPrice = data.unitPrice || 0;
+
+  row.innerHTML = `
+    <td>${document.querySelectorAll('.invoice-item-row').length + 1}</td>
+    <td><input type="text" value="${productName}" class="table-input product-name"></td>
+    <td><input type="text" value="${productBrand}" class="table-input product-brand"></td>
+    <td><input type="number" value="${qty}" min="1" class="table-input qty"></td>
+    <td><input type="number" value="${unitPrice}" min="0" class="table-input unit-price"></td>
+    <td><input type="number" value="${Number(qty) * Number(unitPrice)}" min="0" class="table-input total-price" readonly></td>
+  `;
+
+  return row;
+};
+
+const itemsBody = document.getElementById('invoiceItemsBody');
+const addProductRowBtn = document.getElementById('addProductRow');
+
+if (addProductRowBtn && itemsBody) {
+  addProductRowBtn.addEventListener('click', () => {
+    itemsBody.appendChild(createProductRow());
+    updateInvoiceSummary();
+    reindexRows();
+  });
+}
+
+const reindexRows = () => {
+  const rows = document.querySelectorAll('.invoice-item-row');
+  rows.forEach((row, index) => {
+    const firstCell = row.querySelector('td');
+    if (firstCell) firstCell.textContent = index + 1;
+  });
+};
+
+const updateInvoiceSummary = () => {
+  const rows = document.querySelectorAll('.invoice-item-row');
+  let subtotal = 0;
+
+  rows.forEach((row) => {
+    const quantity = Number((row.querySelector('.qty') || {}).value || 0);
+    const unitPrice = Number((row.querySelector('.unit-price') || {}).value || 0);
+    const total = quantity * unitPrice;
+    const totalInput = row.querySelector('.total-price');
+    if (totalInput) totalInput.value = total;
+    subtotal += total;
+  });
+
+  const subtotalValue = document.getElementById('subtotalValue');
+  const totalBillValue = document.getElementById('totalBillValue');
+  const grandTotal = document.getElementById('grandTotal');
+  const outstandingBalance = document.getElementById('outstandingBalance');
+  const amountInWords = document.getElementById('amountInWords');
+
+  const formatted = formatCurrency(subtotal);
+
+  if (subtotalValue) subtotalValue.textContent = formatted;
+  if (totalBillValue) totalBillValue.textContent = formatted;
+  if (grandTotal) grandTotal.textContent = formatted;
+  if (outstandingBalance) outstandingBalance.textContent = formatted;
+  if (amountInWords) amountInWords.textContent = numberToWords(subtotal);
+};
+
+const bindRowCalculations = () => {
+  document.querySelectorAll('.invoice-item-row').forEach((row) => {
+    row.querySelectorAll('.qty, .unit-price').forEach((field) => {
+      field.addEventListener('input', updateInvoiceSummary);
+    });
+  });
+};
+
+bindRowCalculations();
+updateInvoiceSummary();
+
+const customerNameField = document.getElementById('customerName');
+const customerTitleField = document.getElementById('customerTitle');
+const customerAddressField = document.getElementById('customerAddress');
+const customerEmailField = document.getElementById('customerEmail');
+const deliveryNameField = document.getElementById('deliveryName');
+const deliveryAddressField = document.getElementById('deliveryAddress');
+const projectNameField = document.getElementById('projectName');
+const poNumberField = document.getElementById('poNumber');
+
+const getInvoicePayload = () => {
+  const rows = [...document.querySelectorAll('.invoice-item-row')].map((row, index) => {
+    const name = (row.querySelector('.product-name') || { value: '' }).value || '';
+    const brand = (row.querySelector('.product-brand') || { value: '' }).value || '';
+    const qty = Number((row.querySelector('.qty') || { value: 0 }).value || 0);
+    const unitPrice = Number((row.querySelector('.unit-price') || { value: 0 }).value || 0);
+    const total = qty * unitPrice;
+
+    return { index: index + 1, name, brand, qty, unitPrice, total };
+  });
+
+  return {
+    invoiceNumber: document.getElementById('invoiceNumber')?.value || 'INV-2026-001',
+    invoiceDate: document.getElementById('invoiceDate')?.value || '',
+    dueDate: document.getElementById('dueDate')?.value || '',
+    customerName: customerNameField?.value || '',
+    customerTitle: customerTitleField?.value || '',
+    customerAddress: customerAddressField?.value || '',
+    customerEmail: customerEmailField?.value || '',
+    deliveryName: deliveryNameField?.value || '',
+    deliveryAddress: deliveryAddressField?.value || '',
+    projectName: projectNameField?.value || '',
+    poNumber: poNumberField?.value || '',
+    rows,
+    subtotal: Number(document.getElementById('subtotalValue')?.textContent?.replace(/,/g, '') || 0),
+    totalValue: document.getElementById('totalBillValue')?.textContent || '0',
+    recipients: document.getElementById('sendToEmails')?.value || '',
+    amountInWords: document.getElementById('amountInWords')?.textContent || ''
+  };
+};
+
+const buildInvoiceEmail = () => {
+  const payload = getInvoicePayload();
+  const recipientList = payload.recipients
+    .split(',')
+    .map((email) => email.trim())
+    .filter(Boolean)
+    .join(',');
+
+  const productLines = payload.rows.map((row) => {
+    if (!row.name && !row.brand) return '';
+    return `- ${row.name || 'Product'} (${row.brand || 'N/A'}) | Qty: ${row.qty} | Unit: ${row.unitPrice} BDT | Total: ${row.total} BDT`;
+  }).filter(Boolean).join('\n');
+
+  const emailSubject = encodeURIComponent(`Invoice ${payload.invoiceNumber} - ${payload.customerName || 'Customer'}`);
+  const emailBody = encodeURIComponent(
+    `Hello,\n\nPlease review the attached invoice / quotation details below.\n\nInvoice Number: ${payload.invoiceNumber}\nInvoice Date: ${payload.invoiceDate}\nDue Date: ${payload.dueDate}\nCustomer: ${payload.customerName}\nTitle: ${payload.customerTitle}\nAddress: ${payload.customerAddress}\nEmail: ${payload.customerEmail}\n\nDelivery To: ${payload.deliveryName}\nDelivery Address: ${payload.deliveryAddress}\n\nReference:\nPO No.: ${payload.poNumber}\nProject: ${payload.projectName}\n\nProducts:\n${productLines || 'No products listed'}\n\nSubtotal: ${payload.subtotal} BDT\nTotal Bill: ${payload.totalValue}\nAmount in Words: ${payload.amountInWords}\n\nRegards,\nMotion Controls Corporation\nwww.mcontrolsco.com`
+  );
+
+  return {
+    recipientList,
+    mailto: `mailto:${recipientList}?subject=${emailSubject}&body=${emailBody}`
+  };
+};
+
+const sendInvoiceBtn = document.getElementById('sendInvoiceBtn');
+if (sendInvoiceBtn) {
+  sendInvoiceBtn.addEventListener('click', () => {
+    const email = sessionStorage.getItem('mccInvoiceAccessEmail');
+    if (!email || !allowInvoiceAccess(email)) {
+      setAccessMessage('Access denied. Please sign in with an approved MCC address to send invoices.', 'error');
+      return;
+    }
+
+    const { recipientList, mailto } = buildInvoiceEmail();
+    if (!recipientList) {
+      window.alert('Please enter at least one email address in “Send to multiple emails”.');
+      return;
+    }
+
+    window.location.href = mailto;
+  });
+}
+
+const printInvoiceBtn = document.getElementById('printInvoiceBtn');
+if (printInvoiceBtn) {
+  printInvoiceBtn.addEventListener('click', () => {
+    window.print();
+  });
+}
+
+const formInputs = document.querySelectorAll('#invoiceBuilder input, #invoiceBuilder textarea');
+formInputs.forEach((input) => {
+  input.addEventListener('input', updateInvoiceSummary);
 });
 
-const grid = document.querySelector('#articleGrid');
-const searchInput = document.querySelector('#articleSearch');
-const emptyState = document.querySelector('#emptyState');
-
-function renderArticles() {
-  if (!grid) return;
-
-  const query = (searchInput ? searchInput.value : '').trim().toLowerCase();
-  const filtered = articles.filter((article) => {
-    if (!query) return true;
-    return Object.values(article).join(' ').toLowerCase().includes(query);
-  });
-
-  if (!filtered.length) {
-    grid.innerHTML = '';
-    if (emptyState) {
-      emptyState.classList.remove('hidden');
-      emptyState.style.display = 'block';
-    }
-    return;
+const navLinks = document.querySelectorAll('.nav-links a');
+navLinks.forEach((link) => {
+  if (link.getAttribute('href') === 'invoice.html') {
+    link.classList.add('active-link');
   }
+});
 
-  if (emptyState) {
-    emptyState.classList.add('hidden');
-    emptyState.style.display = 'none';
-  }
-
-  grid.innerHTML = filtered.map((article) => `
-    <article class="article-card reveal">
-      <div class="tag">${article.category}</div>
-      <h3>${article.title}</h3>
-      <div class="meta">${article.date}</div>
-      <p>${article.excerpt}</p>
-      <a class="text-link" href="${article.link}">Read article →</a>
-    </article>
-  `).join('');
-
-  const newCards = grid.querySelectorAll('.reveal');
-  newCards.forEach((card) => observer.observe(card));
-}
-
-if (grid) {
-  renderArticles();
-}
-
-if (searchInput) {
-  searchInput.addEventListener('input', renderArticles);
+if (document.body.dataset.page === 'invoice' && !savedEmail) {
+  const accessField = document.getElementById('invoiceAccessEmail');
+  if (accessField) accessField.focus();
 }
